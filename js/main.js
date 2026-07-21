@@ -1,3 +1,23 @@
+// Accordion animation
+document.querySelectorAll('.event-card').forEach(details => {
+  const summary = details.querySelector('summary');
+  const p = details.querySelector('p');
+  summary.addEventListener('click', e => {
+    e.preventDefault();
+    if (details.open) {
+      p.style.maxHeight = '0';
+      p.style.opacity = '0';
+      p.style.paddingBottom = '0';
+      setTimeout(() => details.removeAttribute('open'), 250);
+    } else {
+      details.setAttribute('open', '');
+      p.style.maxHeight = p.scrollHeight + 'px';
+      p.style.opacity = '1';
+      p.style.paddingBottom = '1.4rem';
+    }
+  });
+});
+
 // Sticky nav
 const nav = document.querySelector('nav');
 window.addEventListener('scroll', () => {
