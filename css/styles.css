@@ -424,7 +424,7 @@ section { padding: 6rem 5%; }
 .carousel-slide {
   min-width: 100%;
   position: relative;
-  height: 70vh;
+  height: 88vh;
 }
 
 .carousel-slide img {
@@ -619,7 +619,7 @@ section { padding: 6rem 5%; }
   object-position: center 20%;
 }
 
-.katherine-photo { object-position: 60% center; }
+.katherine-photo { object-position: 75% center; }
 
 .team-info {
   padding: 2.5rem 2.5rem;

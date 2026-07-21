@@ -24,7 +24,7 @@ function updateParallax() {
   if (!carousel) return;
   const rect = carousel.getBoundingClientRect();
   const center = rect.top + rect.height / 2 - window.innerHeight / 2;
-  const offset = center * 0.07;
+  const offset = center * 0.18;
   document.querySelectorAll('.carousel-slide img').forEach(img => {
     img.style.transform = `scale(1.08) translateY(${offset}px)`;
   });
