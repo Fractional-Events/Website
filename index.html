@@ -186,7 +186,7 @@
         <p class="contact-email">Or email us directly at<br><a href="mailto:info@fractionalevents.com">info@fractionalevents.com</a></p>
       </div>
       <div class="contact-right">
-        <form action="https://formspree.io/f/REPLACE_WITH_YOUR_ID" method="POST" class="contact-form">
+        <form id="contact-form" class="contact-form">
           <div class="form-row">
             <div class="form-group">
               <label for="name">Full Name</label>
@@ -205,7 +205,8 @@
             <label for="message">What are you looking to accomplish?</label>
             <textarea id="message" name="message" rows="5" placeholder="Tell us about your event goals, timeline, and team size..." required></textarea>
           </div>
-          <button type="submit" class="btn-submit">Send Message</button>
+          <button type="submit" class="btn-submit" id="submit-btn">Send Message</button>
+          <p class="form-status" id="form-status"></p>
         </form>
       </div>
     </div>
