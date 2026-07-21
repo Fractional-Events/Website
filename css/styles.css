@@ -488,10 +488,11 @@ section { padding: 6rem 5%; }
 .team-header { margin-bottom: 3.5rem; }
 
 .team-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
-  max-width: 860px;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 .team-card {
@@ -499,11 +500,14 @@ section { padding: 6rem 5%; }
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid rgba(0,0,0,0.05);
+  display: grid;
+  grid-template-columns: 260px 1fr;
 }
 
 .team-photo {
   width: 100%;
-  height: 420px;
+  height: 100%;
+  min-height: 320px;
   background: var(--navy-mid);
   overflow: hidden;
 }
@@ -515,10 +519,15 @@ section { padding: 6rem 5%; }
   object-position: center 20%;
 }
 
-.team-info { padding: 1.75rem 2rem; }
+.team-info {
+  padding: 2.5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 .team-info h3 {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--navy);
   margin-bottom: 0.2rem;
@@ -530,14 +539,14 @@ section { padding: 6rem 5%; }
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 0.875rem;
+  margin-bottom: 1rem;
   display: block;
 }
 
 .team-info p {
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   color: var(--gray-dark);
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 /* ── CTA BANNER ── */
@@ -687,7 +696,8 @@ footer {
   .services-grid { grid-template-columns: 1fr; }
   .process-grid { grid-template-columns: repeat(2, 1fr); }
   .process-step::before { display: none; }
-  .team-grid { grid-template-columns: 1fr; max-width: 440px; }
+  .team-card { grid-template-columns: 1fr; }
+  .team-photo { min-height: 280px; }
   .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
   .form-row { grid-template-columns: 1fr; }
 }
