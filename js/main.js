@@ -7,13 +7,13 @@ document.querySelectorAll('.event-card').forEach(details => {
     if (details.open) {
       p.style.maxHeight = '0';
       p.style.opacity = '0';
-      p.style.paddingBottom = '0';
+      p.style.padding = '0 2rem 0';
       setTimeout(() => details.removeAttribute('open'), 250);
     } else {
       details.setAttribute('open', '');
-      p.style.maxHeight = p.scrollHeight + 'px';
+      p.style.padding = '0.5rem 2rem 2rem';
+      p.style.maxHeight = p.scrollHeight + 80 + 'px';
       p.style.opacity = '1';
-      p.style.paddingBottom = '1.4rem';
     }
   });
 });

@@ -372,18 +372,17 @@ section { padding: 6rem 5%; }
   font-size: 0.85rem;
   color: rgba(255,255,255,0.6);
   line-height: 1.7;
-  padding: 0 2rem 1.4rem;
+  padding: 0 2rem 0;
   overflow: hidden;
   max-height: 0;
   opacity: 0;
   transition: max-height 0.25s ease, opacity 0.2s ease, padding 0.25s ease;
-  padding-bottom: 0;
 }
 
 .event-card[open] p {
-  max-height: 200px;
+  max-height: 400px;
   opacity: 1;
-  padding-bottom: 1.4rem;
+  padding: 0.5rem 2rem 2rem;
 }
 
 @media (max-width: 640px) { .event-accordion { grid-template-columns: 1fr; } }
