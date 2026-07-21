@@ -18,6 +18,20 @@ document.querySelectorAll('.event-card').forEach(details => {
   });
 });
 
+// Carousel parallax
+function updateParallax() {
+  const carousel = document.querySelector('.carousel');
+  if (!carousel) return;
+  const rect = carousel.getBoundingClientRect();
+  const center = rect.top + rect.height / 2 - window.innerHeight / 2;
+  const offset = center * 0.07;
+  document.querySelectorAll('.carousel-slide img').forEach(img => {
+    img.style.transform = `scale(1.08) translateY(${offset}px)`;
+  });
+}
+window.addEventListener('scroll', updateParallax, { passive: true });
+updateParallax();
+
 // Sticky nav
 const nav = document.querySelector('nav');
 window.addEventListener('scroll', () => {

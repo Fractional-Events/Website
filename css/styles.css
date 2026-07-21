@@ -398,12 +398,19 @@ section { padding: 6rem 5%; }
 @media (max-width: 640px) { .event-accordion { grid-template-columns: 1fr; } }
 
 /* ── GALLERY / CAROUSEL ── */
-#gallery { background: var(--white); }
+#gallery {
+  background: var(--white);
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+}
+
+.gallery-header {
+  padding: 4rem 5% 2rem;
+}
 
 .carousel {
   position: relative;
-  margin-top: 2.5rem;
-  border-radius: 10px;
   overflow: hidden;
   user-select: none;
 }
@@ -423,24 +430,47 @@ section { padding: 6rem 5%; }
 .carousel-slide img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  background: var(--navy);
+  object-fit: cover;
   display: block;
+  transform: scale(1.08);
+  transition: filter 0.35s ease;
+  will-change: transform;
 }
 
-.carousel-caption {
+.carousel-slide:hover img {
+  filter: brightness(0.4) grayscale(0.3);
+}
+
+.slide-hover-info {
   position: absolute;
-  bottom: 1.25rem;
-  left: 1.5rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.carousel-slide:hover .slide-hover-info { opacity: 1; }
+
+.slide-event {
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.01em;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.slide-location {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.75);
-  background: rgba(0,0,0,0.35);
-  padding: 0.35rem 0.75rem;
-  border-radius: 4px;
-  backdrop-filter: blur(4px);
+  color: var(--gold);
 }
 
 .carousel-btn {
@@ -589,7 +619,7 @@ section { padding: 6rem 5%; }
   object-position: center 20%;
 }
 
-.katherine-photo { object-position: center center; }
+.katherine-photo { object-position: 60% center; }
 
 .team-info {
   padding: 2.5rem 2.5rem;
