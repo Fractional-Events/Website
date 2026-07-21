@@ -413,6 +413,8 @@ section { padding: 6rem 5%; }
   position: relative;
   overflow: hidden;
   user-select: none;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
 }
 
 .carousel-track {
