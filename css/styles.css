@@ -417,7 +417,7 @@ section { padding: 6rem 5%; }
 .carousel-slide {
   min-width: 100%;
   position: relative;
-  height: 520px;
+  height: 70vh;
 }
 
 .carousel-slide img {
@@ -492,7 +492,7 @@ section { padding: 6rem 5%; }
 }
 
 @media (max-width: 640px) {
-  .carousel-slide { height: 300px; }
+  .carousel-slide { height: 50vh; }
   .carousel-btn { width: 2.2rem; height: 2.2rem; font-size: 0.9rem; }
 }
 
