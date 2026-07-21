@@ -69,7 +69,7 @@ document.querySelector('.carousel-btn--next').addEventListener('click', () => { 
 
 function resetAutoplay() {
   clearInterval(autoplay);
-  autoplay = setInterval(() => goTo(current + 1), 4000);
+  autoplay = setInterval(() => goTo(current + 1), 7000);
 }
 
 resetAutoplay();
