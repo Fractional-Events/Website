@@ -475,6 +475,92 @@ section { padding: 6rem 5%; }
   margin: 0.75rem auto 2rem;
 }
 
+/* ── CONTACT ── */
+#contact { background: var(--off-white); }
+
+.contact-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.contact-email {
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  color: var(--gray-dark);
+  line-height: 1.6;
+}
+
+.contact-email a {
+  color: var(--navy);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-email a:hover { color: var(--gold); }
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.02em;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.75rem 1rem;
+  border: 1.5px solid rgba(0,0,0,0.12);
+  border-radius: 6px;
+  font-family: var(--font);
+  font-size: 0.9rem;
+  color: var(--text);
+  background: var(--white);
+  transition: border-color 0.2s;
+  outline: none;
+  resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--gray-mid); }
+
+.form-group input:focus,
+.form-group textarea:focus { border-color: var(--gold); }
+
+.btn-submit {
+  background: var(--navy);
+  color: var(--white);
+  border: none;
+  padding: 0.9rem 2rem;
+  border-radius: 6px;
+  font-family: var(--font);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  align-self: flex-start;
+}
+
+.btn-submit:hover { background: var(--navy-mid); transform: translateY(-1px); }
+
 /* ── FOOTER ── */
 footer {
   background: #060E17;
@@ -520,6 +606,8 @@ footer {
   .process-grid { grid-template-columns: repeat(2, 1fr); }
   .process-step::before { display: none; }
   .team-grid { grid-template-columns: 1fr; max-width: 440px; }
+  .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .form-row { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px) {
