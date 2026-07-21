@@ -589,6 +589,8 @@ section { padding: 6rem 5%; }
   object-position: center 20%;
 }
 
+.katherine-photo { object-position: center center; }
+
 .team-info {
   padding: 2.5rem 2.5rem;
   display: flex;
