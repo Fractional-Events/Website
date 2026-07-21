@@ -30,6 +30,36 @@ const navLinks = document.querySelector('.nav-links');
 toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
 navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
+// Carousel
+const track = document.querySelector('.carousel-track');
+const slides = document.querySelectorAll('.carousel-slide');
+const dotsContainer = document.querySelector('.carousel-dots');
+let current = 0;
+let autoplay;
+
+slides.forEach((_, i) => {
+  const dot = document.createElement('button');
+  dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+  dot.addEventListener('click', () => goTo(i));
+  dotsContainer.appendChild(dot);
+});
+
+function goTo(index) {
+  current = (index + slides.length) % slides.length;
+  track.style.transform = `translateX(-${current * 100}%)`;
+  document.querySelectorAll('.carousel-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+}
+
+document.querySelector('.carousel-btn--prev').addEventListener('click', () => { goTo(current - 1); resetAutoplay(); });
+document.querySelector('.carousel-btn--next').addEventListener('click', () => { goTo(current + 1); resetAutoplay(); });
+
+function resetAutoplay() {
+  clearInterval(autoplay);
+  autoplay = setInterval(() => goTo(current + 1), 4000);
+}
+
+resetAutoplay();
+
 // Contact form
 const form = document.getElementById('contact-form');
 const submitBtn = document.getElementById('submit-btn');
